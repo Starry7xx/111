@@ -1,0 +1,23 @@
+run_name: 80%
+train_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main-4/multiview_data/Ours/3_data_learning_curve/add_5d/add_5d_6/add_5d_train_70%.pkl
+val_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main-4/multiview_data/Ours/3_data_learning_curve/add_5d/add_5d_6/add_5d_val_20%.pkl #/define/your/path
+ckpt_save_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main-4/multiview_data/checkpoint/ours/3_data_learning_curve/add_5d_6
+
+resume_path: null # checkpoint for resuming training
+resume_config: null # config for resuming training
+
+pt_ckpt_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main-3/multiview_data/checkpoint/OC20/2/2_test_clip_train_1125_2102/checkpoint.pt # (optional) path for pre-trained checkpoint
+model_config: model/clip.yml
+
+head: pooler
+device: cuda
+num_epochs: 50
+early_stop_threshold: 4
+batch_size: 32
+lr: 1.0e-6
+warmup_steps: 0
+optimizer: AdamW # AdamW, gLLRD
+scheduler: reduceLR
+loss_fn: MSELoss
+log_interval: 10
+debug: False
